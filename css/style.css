@@ -157,7 +157,7 @@ h2.section-header {
 /* HEADER */
 /* ================= */
 
-.header {
+header.header {
   margin-top: 34px;
   position: relative;
 }
@@ -210,7 +210,8 @@ ul .nav-link:hover::after {
 .hero::after {
   content: "";
   display: inline-block;
-  background: rgba(117, 68, 255, 0.37);
+  background: rgb(115 75 229 / 62%);
+  /* background: rgba(117, 68, 255, 0.37); */
   width: 720px;
   height: 388px;
   position: absolute;
@@ -251,18 +252,48 @@ ul .nav-link:hover::after {
 /* ================= */
 /* ABOUT-US */
 /* ================= */
+.video-wrapper video {
+  width: 100%;
+}
+.video-wrapper {
+  margin-bottom: 109px;
+  position: relative;
+}
+.video-wrapper img {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
 
 .about-us h3 {
+  position: relative;
   max-width: 1187px;
-  padding-bottom: 72px;
+  margin-bottom: 72px;
+}
+.about-us h3::before {
+  content: "";
+  display: inline-block;
+  background: rgb(115 75 229 / 62%);
+  /* background: rgba(117, 68, 255, 0.37); */
+  width: 609px;
+  height: 328px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -250px;
+  border-radius: 720px;
+  filter: blur(169px);
 }
 .about-us .cta {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-block: 25px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 .about-us .cta p {
-  padding-block: 25px;
   color: #fff;
   font-family: Inter Tight;
   font-size: 24px;
@@ -280,7 +311,7 @@ ul .nav-link:hover::after {
 }
 
 .service-header {
-  padding-bottom: 163px;
+  margin-bottom: 163px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -291,12 +322,12 @@ ul .nav-link:hover::after {
   display: flex;
   flex-wrap: wrap;
   gap: 34px;
-  padding-bottom: 162px;
+  margin-bottom: 162px;
 }
 .service-card {
   border-radius: 12px;
   width: 492px;
-  padding: 33px 33px 23px 33px;
+  padding: 33px 32px 23px;
 }
 .service-arrow path,
 .service-arrow circle {
@@ -315,7 +346,7 @@ ul .nav-link:hover::after {
   background-position: center;
   background-repeat: no-repeat;
 }
-.service-card h3.card-header {
+.service-card h3.header {
   max-width: 308px;
   margin-bottom: 44px;
   color: #000;
@@ -341,7 +372,7 @@ ul .nav-link:hover::after {
 }
 .service-cards .service-card:nth-child(3) {
   margin-left: 354px;
-  padding: 30px 0 24px 30px;
+  padding: 30px 30px 23px;
   background-image: url(../assets/retail.analytics.png);
   background-size: cover;
   background-position: center;
@@ -356,38 +387,65 @@ ul .nav-link:hover::after {
   background-position: center;
   background-repeat: no-repeat;
 }
-.service-card:last-child h3.card-header {
+.service-card:last-child h3.header {
   max-width: 447px;
   color: #fff;
-}
-i.fa-arrow-up-right {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  color: #fff;
-  background-color: #ffffff;
 }
 
 /* ======== SERVICE TYPES ======== */
 
+.service-type {
+  display: flex;
+  gap: 160px;
+  border-bottom: 1px solid #fff;
+  margin-top: 103px;
+}
+.service-type:nth-child(1) {
+  margin-top: unset;
+}
+.service-type:nth-child(4) {
+  border-bottom: unset;
+}
+.service-type:nth-child(4) .detail {
+  margin-bottom: 132px;
+}
 .service-type h4.counter {
+  position: relative;
   color: #fff;
   font-family: Inter Tight;
   font-size: 64px;
   font-style: normal;
   font-weight: 500;
-  line-height: 148.996%; /* 95.357px */
+  line-height: normal; /* 95.357px */
 }
-.service-type h3.header {
+.service-type h4.counter::after {
+  content: "";
+  width: 87px;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  top: 35px;
+  left: 95px;
+}
+.service-type .header {
   line-height: 148.996%; /* 59.598px */
 }
 
 .service-type .detail {
+  max-width: 1101px;
+  margin-top: 20px;
+  margin-bottom: 70px;
   color: #fff;
   font-family: "Inter Tight";
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
   line-height: 189.496%; /* 45.479px */
+}
+
+/* ======== SERVICE GALLERY ======== */
+
+.service-gallery {
+  display: flex;
+  gap: 22px;
 }
