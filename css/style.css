@@ -97,7 +97,7 @@ select {
 .container {
   max-width: 1372px;
   margin: 0 auto;
-  padding: 0 15px;
+  /* padding: 0 15px; */
 }
 
 .btn {
@@ -161,19 +161,6 @@ h2.section-header {
   margin-top: 34px;
   position: relative;
 }
-.header::after {
-  content: "";
-  display: inline-block;
-  background: rgba(117, 68, 255, 0.37);
-  width: 720px;
-  height: 388px;
-  position: absolute;
-  z-index: -1;
-  top: 176px;
-  right: 0;
-  border-radius: 720px;
-  filter: blur(169px);
-}
 
 /* ======== NAVBAR ======== */
 
@@ -215,9 +202,23 @@ ul .nav-link:hover::after {
 }
 
 /* ======== HERO ======== */
+
 .hero {
   padding: 178px 0 121px;
   position: relative;
+}
+.hero::after {
+  content: "";
+  display: inline-block;
+  background: rgba(117, 68, 255, 0.37);
+  width: 720px;
+  height: 388px;
+  position: absolute;
+  z-index: -1;
+  top: 176px;
+  right: 0;
+  border-radius: 720px;
+  filter: blur(169px);
 }
 
 .hero-content-wrapper {
@@ -248,10 +249,75 @@ ul .nav-link:hover::after {
 }
 
 /* ================= */
+/* ABOUT-US */
+/* ================= */
+
+.about-us h3 {
+  max-width: 1187px;
+  padding-bottom: 72px;
+}
+.about-us .cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about-us .cta p {
+  padding-block: 25px;
+  color: #fff;
+  font-family: Inter Tight;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 177.996%; /* 42.719px */
+}
+
+/* ================= */
 /* SERVICES */
 /* ================= */
 
-.service-card h3.header {
+.services {
+  margin-top: 94px;
+}
+
+.service-header {
+  padding-bottom: 163px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* ======== SERVICE CARDS ======== */
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px;
+  padding-bottom: 162px;
+}
+.service-card {
+  border-radius: 12px;
+  width: 492px;
+  padding: 33px 33px 23px 33px;
+}
+.service-arrow path,
+.service-arrow circle {
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.service-arrow:hover circle {
+  fill: #fff;
+}
+.service-arrow:hover path {
+  fill: #000;
+}
+.service-cards .service-card:first-child {
+  background-image: url(../assets/retail.marketing.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.service-card h3.card-header {
+  max-width: 308px;
+  margin-bottom: 44px;
   color: #000;
   /* leading-trim: both;
   text-edge: cap; */
@@ -261,21 +327,61 @@ ul .nav-link:hover::after {
   font-weight: 500;
   line-height: 119.996%; /* 47.998px */
 }
+.service-cards .service-card:nth-child(2) {
+  position: relative;
+  background-image: url(../assets/shopping.marketing.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.service-cards .service-card:nth-child(2) .service-arrow {
+  position: absolute;
+  top: 37px;
+  right: 27px;
+}
+.service-cards .service-card:nth-child(3) {
+  margin-left: 354px;
+  padding: 30px 0 24px 30px;
+  background-image: url(../assets/retail.analytics.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.service-cards .service-card:nth-child(3) h3 {
+  margin-bottom: 94px;
+}
+.service-cards .service-card:last-child {
+  background-image: url(../assets/communication.bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.service-card:last-child h3.card-header {
+  max-width: 447px;
+  color: #fff;
+}
+i.fa-arrow-up-right {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #ffffff;
+}
+
+/* ======== SERVICE TYPES ======== */
+
 .service-type h4.counter {
-  color: #000;
-  /* leading-trim: both;
-    text-edge: cap; */
-  font-family: "Inter Tight";
-  font-size: 40px;
+  color: #fff;
+  font-family: Inter Tight;
+  font-size: 64px;
   font-style: normal;
   font-weight: 500;
-  line-height: 119.996%; /* 47.998px */
+  line-height: 148.996%; /* 95.357px */
 }
-/* .service-type .header {
-  color: #fff;
-  font-weight: 400;
-  line-height: 148.996%; 
-} */
+.service-type h3.header {
+  line-height: 148.996%; /* 59.598px */
+}
 
 .service-type .detail {
   color: #fff;
