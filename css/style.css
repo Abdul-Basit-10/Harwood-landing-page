@@ -555,11 +555,11 @@ ul .nav-link:hover::after {
   content: "";
   display: inline-block;
   background: rgb(125 91 222 / 85%);
-  width: 609px;
-  height: 328px;
+  width: 577px;
+  height: 230px;
   position: absolute;
   z-index: -1;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 720px;
@@ -721,11 +721,11 @@ input::placeholder {
   background: rgb(125 91 222 / 85%);
   /* background: rgba(117, 68, 255, 0.37); */
   width: 500px;
-  height: 328px;
+  height: 300px;
   position: absolute;
   z-index: -1;
-  top: 100px;
-  left: 100px;
+  top: 150px;
+  left: 150px;
   border-radius: 720px;
   filter: blur(169px);
 }
