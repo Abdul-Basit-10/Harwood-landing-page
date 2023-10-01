@@ -98,7 +98,9 @@ ul {
 /* ================= */
 /* COMMON CSS */
 /* ================= */
-
+.slick-arrow.slick-hidden {
+  display: unset;
+}
 .container {
   max-width: 1372px;
   margin: 0 auto;
@@ -106,6 +108,7 @@ ul {
 }
 .newsletter form input.user-name,
 .footer-form form input.user-name {
+  color: #fff;
   background-color: #000;
   padding: 15px;
   max-width: 500px;
@@ -262,7 +265,7 @@ ul .nav-link:hover::after {
   z-index: -1;
   top: 100px;
   right: -10px;
-  border-radius: 720px;
+  border-radius: 50%;
   filter: blur(169px);
 }
 
@@ -325,7 +328,7 @@ ul .nav-link:hover::after {
   z-index: -1;
   top: 0;
   left: -100px;
-  border-radius: 720px;
+  border-radius: 50%;
   filter: blur(169px);
 }
 .about-us .cta {
@@ -523,6 +526,9 @@ ul .nav-link:hover::after {
 /* ================= */
 /* TESTIMONIALS */
 /* ================= */
+.testimonials .slick-list.draggable {
+  padding-bottom: 182px;
+}
 
 .testimonial-wrapper {
   margin-bottom: 83px;
@@ -541,6 +547,10 @@ ul .nav-link:hover::after {
 }
 
 /* ======== CLIENT REVIEW ======== */
+
+/* .slider {
+  width: 100%;
+} */
 
 .client-review {
   display: flex;
@@ -562,7 +572,7 @@ ul .nav-link:hover::after {
   top: 25%;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 720px;
+  border-radius: 50%;
   filter: blur(169px);
 }
 .client-detail-slider h5 {
@@ -609,7 +619,7 @@ ul .nav-link:hover::after {
 /* ================= */
 
 .newsletter {
-  margin: 182px 0 149px;
+  margin-bottom: 149px;
 }
 .newsletter-wrapper {
   border: 1px solid #cecece;
@@ -726,7 +736,7 @@ input::placeholder {
   z-index: -1;
   top: 150px;
   left: 150px;
-  border-radius: 720px;
+  border-radius: 50%;
   filter: blur(169px);
 }
 .about_us_AI p {
@@ -821,7 +831,7 @@ input::placeholder {
 }
 
 /* ================= */
-/* OUR TEAM */
+/* OUR VALUES */
 /* ================= */
 
 .our-values .values-wrapper {
@@ -858,10 +868,25 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
 }
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: inherit !important;
+  margin-inline: 21.5px;
+}
+.achievement-slider {
+  display: flex;
+  gap: 47px;
+}
+/* .achievement {
+} */
 .achievement-detail {
   margin-top: 22px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .achievement-detail h6 {
   margin-block: unset;
@@ -962,4 +987,12 @@ input::placeholder {
   display: flex;
   align-items: center;
   gap: 30px;
+}
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: inherit !important;
+  margin-inline: 21.5px;
 }
