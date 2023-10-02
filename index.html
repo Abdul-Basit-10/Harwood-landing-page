@@ -33,6 +33,44 @@
             </li>
           </ul>
           <a href="" class="btn btn-primary">Let’s Connect </a>
+          <ion-icon
+            name="menu-outline"
+            class="mobile-nav-icon ham-icon"
+          ></ion-icon>
+
+          <!-- mobile navbar  -->
+
+          <div class="mobile-nav-menu">
+            <div class="parent">
+              <a href="">
+                <img src="assets/home-logo.svg" alt="" />
+              </a>
+              <ion-icon
+                name="close-outline"
+                class="mobile-nav-icon close-icon"
+              ></ion-icon>
+            </div>
+            <ul class="mobile-nav-list">
+              <li class="nav-item">
+                <a href="" class="mobile-nav-link">Services</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="mobile-nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="mobile-nav-link">Team</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="mobile-nav-link">Testimonials</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="mobile-nav-link">Achievements</a>
+              </li>
+            </ul>
+            <a href="" class="btn btn-primary mobile-btn-primary"
+              >Let’s Connect
+            </a>
+          </div>
         </nav>
         <div class="hero">
           <div class="hero-content-wrapper">
@@ -53,7 +91,7 @@
             <source src="assets/swapco-explainer.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <img src="assets/Play-icon.svg" alt="" />
+          <img class="play-btn" src="assets/Play-icon.svg" alt="" />
         </div>
         <h3>
           We blend retail expertise with advanced AI technology to help you
@@ -234,8 +272,12 @@
           </div>
         </div>
         <div class="service-gallery">
-          <img src="assets/services.gallery1.jpg" alt="" />
-          <img src="assets/services.gallery2.jpg" alt="" />
+          <div>
+            <img src="assets/services.gallery1.jpg" alt="" />
+          </div>
+          <div>
+            <img src="assets/services.gallery2.jpg" alt="" />
+          </div>
         </div>
         <div class="learn-more">
           <h2 class="header">
@@ -248,7 +290,7 @@
     <section class="testimonials">
       <div class="container">
         <div class="testimonial-wrapper">
-          <h4 class="header">What Our Client Says About Us</h4>
+          <h2 class="section-header">What Our Client Says About Us</h2>
           <img src="assets/testimonial.bg.jpg" alt="" />
         </div>
 
@@ -616,5 +658,13 @@
     <script src="js/slick.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
