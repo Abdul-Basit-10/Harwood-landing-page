@@ -19,56 +19,25 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-figure,
-blockquote,
-dl,
-dd {
   margin: 0;
+  padding: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
 }
 
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
   background: #000;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
 img,
 picture {
   max-width: 100%;
-  display: block;
+  height: auto;
 }
 
-/* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
@@ -76,21 +45,6 @@ select {
   font: inherit;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
 ul {
   list-style: none;
   padding-left: 0;
@@ -400,15 +354,24 @@ ul .nav-link:hover::after {
 
 .service-cards {
   display: flex;
-  flex-wrap: wrap;
   gap: 34px;
+}
+.service-cards.first {
+  margin-bottom: 34px;
+}
+.service-cards.second {
   margin-bottom: 162px;
 }
 .service-card {
   border-radius: 12px;
   width: 100%;
   max-width: 492px;
-  padding: 33px 32px 23px;
+  padding: 30px 27px 30px 30px;
+
+  min-height: 267px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .service-arrow path,
 .service-arrow circle {
@@ -421,7 +384,7 @@ ul .nav-link:hover::after {
 .service-arrow:hover path {
   fill: #000;
 }
-.service-cards .service-card:first-child {
+.service-cards.first .service-card:first-child {
   background-image: url(../assets/retail.marketing.jpg);
   background-size: cover;
   background-position: center;
@@ -429,7 +392,6 @@ ul .nav-link:hover::after {
 }
 .service-card h3.header {
   max-width: 308px;
-  margin-bottom: 44px;
   color: #000;
   /* leading-trim: both;
   text-edge: cap; */
@@ -439,36 +401,34 @@ ul .nav-link:hover::after {
   font-weight: 500;
   line-height: 119.996%; /* 47.998px */
 }
-.service-cards .service-card:nth-child(2) {
+.service-cards.first .service-card:nth-child(2) {
   position: relative;
   background-image: url(../assets/shopping.marketing.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.service-cards .service-card:nth-child(2) .service-arrow {
+.service-cards.first .service-card:nth-child(2) .service-arrow {
   position: absolute;
   top: 37px;
   right: 27px;
 }
-.service-cards .service-card:nth-child(3) {
-  margin-left: 324px;
-  padding: 30px 30px 23px;
+.service-cards.second .service-card:nth-child(1) {
+  margin-left: auto;
+  /* padding: 30px 30px 23px; */
   background-image: url(../assets/retail.analytics.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.service-cards .service-card:nth-child(3) h3 {
-  margin-bottom: 94px;
-}
-.service-cards .service-card:last-child {
+
+.service-cards.second .service-card:last-child {
   background-image: url(../assets/communication.bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.service-card:last-child h3.header {
+.service-cards.second .service-card:last-child h3.header {
   max-width: 447px;
   color: #fff;
 }
@@ -654,8 +614,10 @@ ul .nav-link:hover::after {
   border: 1px solid #cecece;
   padding: 130px 0;
   position: relative;
+  overflow: hidden;
 }
 .newsletter h3.header {
+  overflow: hidden;
   max-width: 964px;
   margin-inline: auto;
   margin-bottom: 50px;
@@ -670,18 +632,21 @@ ul .nav-link:hover::after {
   line-height: 148.996%; /* 95.357px */
 }
 .newsletter h3.header::after {
-  content: url(../assets/signup.form.bottom.right.png);
+  content: "";
+  display: inline-block;
+  width: 136px;
+  height: 136px;
+  background-color: #fff;
+  border-top-left-radius: 100%;
   position: absolute;
-  right: -47px;
-  bottom: -120px;
-  width: 272px;
-  height: 272px;
-  border-radius: 50%;
+  right: 0;
+  bottom: 0;
 }
 .newsletter form {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-inline: 20px;
 }
 input::placeholder {
   color: rgb(255, 255, 255);
@@ -712,6 +677,9 @@ input::placeholder {
 /* ABOUT US AI */
 /* ================= */
 
+.about_us_AI {
+  overflow: hidden;
+}
 .about_us_AI .header_wrapper {
   display: flex;
   align-items: center;
@@ -736,6 +704,7 @@ input::placeholder {
   font-style: italic;
   font-weight: 500;
   line-height: 189.496%; /* 75.798px */
+  overflow: hidden;
 }
 .about_us_AI .header_wrapper h3::after {
   /* background-image: url(../assets/about-us-wrapper-bg.png);
@@ -867,6 +836,7 @@ input::placeholder {
   margin-top: 58px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 42px;
 }
 .our-values .values-wrapper p {
@@ -995,6 +965,7 @@ input::placeholder {
 .container-custom {
   max-width: 1372px;
   margin: 0 auto;
+  padding-inline: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1031,15 +1002,15 @@ input::placeholder {
 } */
 
 @media only screen and (max-width: 1400px) {
-  .service-cards .service-card:nth-child(3) {
-    margin-left: 200px;
+  .about_us_AI .header_wrapper {
+    gap: 50px;
+    flex-direction: column-reverse;
+  }
+  .more_detail_wrapper h4::after {
+    right: 0;
   }
 }
-@media only screen and (max-width: 1250px) {
-  .service-cards .service-card:nth-child(3) {
-    margin-left: 120px;
-  }
-}
+
 @media only screen and (max-width: 1200px) {
   /* .container {
     padding: 0 15px;
@@ -1050,9 +1021,7 @@ input::placeholder {
   .about-us .cta {
     flex-wrap: wrap;
   }
-  .service-header {
-    margin-bottom: 163px;
-  }
+
   .service-header,
   .testimonial-wrapper {
     justify-content: center;
@@ -1060,8 +1029,24 @@ input::placeholder {
     gap: 30px;
     flex-direction: column-reverse;
   }
-  .service-cards .service-card:nth-child(3) {
-    margin-left: 0px;
+
+  .learn-more {
+    margin-block: 150px;
+  }
+  .client-review {
+    gap: 50px;
+  }
+  .client-review img {
+    width: 45%;
+  }
+  .client-detail-slider h5 {
+    font-size: 28px;
+  }
+  .client-intro p {
+    font-size: 18px;
+  }
+  .about_us_AI p {
+    font-size: 20px;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -1122,10 +1107,14 @@ input::placeholder {
     display: block;
     padding: 10px 30px;
   }
-  .hero-content-wrapper h1 {
+  .hero-content-wrapper h1,
+  .service-type h4.counter,
+  .learn-more h2.header,
+  .newsletter h3.header {
     font-size: 42px;
   }
-  .about-us h3 {
+  .about-us h3,
+  .service-type h3.header {
     font-size: 32px;
   }
   .about-us .cta p {
@@ -1134,6 +1123,9 @@ input::placeholder {
   }
   h2.section-header {
     font-size: 36px;
+  }
+  .service-card h3.header {
+    font-size: 30px;
   }
   .service-type {
     display: block;
@@ -1144,23 +1136,139 @@ input::placeholder {
   .service-type h4.counter::after {
     height: 5px;
     left: -100px;
+    top: 25px;
+  }
+  .learn-more {
+    margin-block: 90px;
+  }
+  .testimonial-wrapper h2.section-header {
+    max-width: 500px;
+  }
+  .client-review {
+    flex-direction: column;
+  }
+  .client-intro p::before {
+    display: none;
+  }
+  .about_us_AI .detail_wrapper {
+    flex-wrap: wrap;
+  }
+  .our-values .values-wrapper .separator {
+    display: none;
+  }
+  .our-values .values-wrapper {
+    justify-content: space-between;
+  }
+  .team-wrapper {
+    gap: 10px;
+  }
+  .team-detail h6 {
+    font-size: 18px;
+  }
+  .team-detail p {
+    font-size: 16px;
+  }
+  .achievement img {
+    width: 100%;
+  }
+  .footer-wrapper {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .about-company {
+    flex-basis: 50%;
+  }
+  .footer-wrapper .footer-menu:nth-child(2) {
+    flex-basis: 44%;
+  }
+  .footer-form {
+    flex-basis: 44%;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hero-content-wrapper h1 {
+  .hero-content-wrapper h1,
+  .service-type h4.counter,
+  .learn-more h2.header,
+  .newsletter h3.header {
     font-size: 36px;
   }
   .hero-content-wrapper p {
     font-size: 18px;
   }
-  .about-us h3 {
+  .about-us h3,
+  .service-type h3.header {
     font-size: 26px;
   }
-  .about-us .cta p {
+  .about-us .cta {
+    justify-content: center;
+  }
+  .about-us .cta p,
+  .service-type .detail {
     font-size: 18px;
   }
   h2.section-header {
-    font-size: 26px;
+    font-size: 30px;
+  }
+  .service-cards {
+    flex-direction: column;
+  }
+  .service-cards.second .service-card:nth-child(1) {
+    margin-left: unset;
+  }
+  .service-card {
+    max-width: unset;
+  }
+  .service-cards.first .service-card:nth-child(2) .service-arrow {
+    position: unset;
+  }
+
+  .service-type h4.counter::after {
+    top: 20px;
+  }
+  .service-cards.second {
+    margin-bottom: 70px;
+  }
+  .client-intro {
+    margin-top: 30px;
+  }
+  .client-detail-slider h5 {
+    font-size: 24px;
+  }
+  .client-intro p {
+    font-size: 16px;
+  }
+  .btn-arrow {
+    width: 50px;
+    height: 50px;
+  }
+  .testimonials .slick-list.draggable {
+    padding-bottom: 100px;
+  }
+  .newsletter-wrapper {
+    padding: 150px 0;
+  }
+  .about_us_AI .header_wrapper h5 {
+    font-size: 28px;
+  }
+  .more_detail_wrapper h4 {
+    font-size: 22px;
+  }
+  .team-wrapper {
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .team-profile {
+    flex-basis: 75%;
+  }
+  .team-profile img {
+    width: 100%;
+  }
+  .our-values .values-wrapper p {
+    font-size: 24px;
+  }
+  .about-company {
+    flex-basis: 40%;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -1171,7 +1279,10 @@ input::placeholder {
     width: 350px;
     height: 200px;
   }
-  .hero-content-wrapper h1 {
+  .hero-content-wrapper h1,
+  .service-type h4.counter,
+  .learn-more h2.header,
+  .newsletter h3.header {
     font-size: 30px;
   }
   .video-wrapper img {
@@ -1179,16 +1290,100 @@ input::placeholder {
   }
   .video-wrapper,
   .about-us h3,
-  .service-header {
+  .service-header,
+  .service-cards,
+  .service-type .detail,
+  .service-type:nth-child(4) .detail {
     margin-bottom: 50px;
   }
-  .about-us h3 {
+
+  .about-us h3,
+  .service-type h3.header {
     font-size: 22px;
   }
   .about-us h3::before {
     height: 220px;
   }
-  .services {
+  .services,
+  .service-type {
     margin-top: 50px;
+  }
+  .service-type .detail {
+    font-size: 16px;
+  }
+  .service-gallery {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .service-gallery img {
+    width: 100%;
+  }
+  .service-type h4.counter::after {
+    top: 15px;
+  }
+  .learn-more {
+    margin-block: 50px;
+  }
+  .btn-arrow {
+  }
+  .client-reviews-sliderBtns,
+  .our-achievements-sliderBtns {
+    gap: 10px;
+  }
+  .newsletter {
+    margin-bottom: 100px;
+  }
+  .newsletter h3.header::after {
+    display: none;
+  }
+  .newsletter-wrapper {
+    padding: 100px 0;
+    background: #272728;
+  }
+  .about_us_AI .header_wrapper h5 {
+    font-size: 24px;
+  }
+  .more_detail_wrapper h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .about_us_AI p {
+    font-size: 16px;
+  }
+  .about_us_AI p:nth-child(3) {
+    margin-block: 40px 20px;
+  }
+  .our-team {
+    margin-block: 100px 50px;
+  }
+  .team-profile {
+    flex-basis: 90%;
+  }
+  .our-achievements {
+    margin-block: 75px;
+  }
+  .achievement-detail h6,
+  .achievement-detail p {
+    font-size: 20px;
+  }
+  .footer-wrapper {
+    gap: 20px;
+  }
+  .about-company {
+    flex-basis: 100%;
+  }
+  .footer-wrapper .footer-menu:nth-child(2) {
+    flex-basis: 100%;
+  }
+  .footer-form {
+    flex-basis: 100%;
+  }
+  .newsletter form input.user-name,
+  .footer-form form input.user-name {
+    max-width: unset;
+  }
+  .footer-menu h5,
+  .footer-form h4 {
+    margin-bottom: -5px;
   }
 }

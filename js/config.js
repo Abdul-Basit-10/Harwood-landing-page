@@ -2,10 +2,7 @@ $(document).ready(function () {
   $(".client-reviews-wrapper").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 1500,
     arrows: true,
-    dots: false,
 
     // appendDots: ".move",
     prevArrow: ".btn-arrow.left ",
@@ -13,11 +10,24 @@ $(document).ready(function () {
   });
   $(".achievement-slider").slick({
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     autoplay: false,
-    autoplaySpeed: 1500,
     arrows: true,
-    dots: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
 
     // appendDots: ".move",
     prevArrow: ".achievement-left ",
